@@ -11,5 +11,5 @@ sylius_shop_ajax_user_check_action:
             repository:
                 method: findOneByEmail
                 arguments:
-                    email: $email
+                    email: "expr:service('sylius.canonicalizer').canonicalize($email)"
             serialization_groups: [Secured]
